@@ -1,16 +1,32 @@
 package io.zipcoder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Music {
 
     private String[] playList;
 
-    public Music (String[] playList){
+    public Music(String[] playList) {
 
         this.playList = playList;
     }
 
-    public Integer selection(Integer startIndex, String selection){
+    public Integer selection(Integer startIndex, String selection) {
 
+        //as ref'd from staging:)
+
+        ArrayList<String> allSongs = new ArrayList<String>(Arrays.asList(this.playList));
+        int forwardCt = Math.abs(allSongs.indexOf(selection) - startIndex);
+        int BackwardCt = Math.abs((allSongs.size() + startIndex) - allSongs.lastIndexOf(selection));
+        return Math.min(forwardCt, BackwardCt);
+
+    }
+}
+
+
+
+        /*
         Integer numOfMoves = 0;
 
         for (int i = startIndex; i <playList.length; i++){
@@ -25,5 +41,6 @@ public class Music {
         //return that as your answer
 
         return numOfMoves;
-    }
-}
+
+        */
+
