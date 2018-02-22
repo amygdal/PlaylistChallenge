@@ -3,6 +3,7 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class MusicTest {
 
     @Test
@@ -24,7 +25,7 @@ public class MusicTest {
         Music music = new Music(playlist);
         Integer startingIndex = 0;
         String selection = "liveoak";
-        Integer expected = 1;
+        Integer expected = 2;
         Integer actual = music.selection(startingIndex, selection);
         Assert.assertEquals(expected, actual);
     }
